@@ -307,6 +307,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
     e.preventDefault();
     tinyModal.openModal('#modal-submit');
+    form.reset();
+    form.btnSubmit.disabled = !_this.checkValidity();
+    Array.from(form.elements).forEach(function (input) {
+      input.classList.remove('valid');
+    });
 
     // var formData = new FormData(form);
     // fetch('php/send.php', {
