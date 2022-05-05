@@ -306,27 +306,29 @@ document.addEventListener('DOMContentLoaded', function () {
     var _this = this;
 
     e.preventDefault();
-    var formData = new FormData(form);
-    fetch('php/send.php', {
-      method: 'POST',
-      body: formData
-    }).then(function (response) {
-      return response.json();
-    }).then(function (data) {
-      if (data.accept) {
-        tinyModal.openModal('#modal-submit');
-        form.reset();
-        form.btnSubmit.disabled = !_this.checkValidity();
-        Array.from(form.elements).forEach(function (input) {
-          input.classList.remove('valid');
-        });
-      } else {
-        serverErrText.innerHTML = 'Ошибка валидации на сервере. Проверьте введенные данные.';
-        console.error(data.error);
-      }
-    }).catch(function (error) {
-      return console.error('my_err: ', error);
-    });
+    tinyModal.openModal('#modal-submit');
+
+    // var formData = new FormData(form);
+    // fetch('php/send.php', {
+    //   method: 'POST',
+    //   body: formData
+    // }).then(function (response) {
+    //   return response.json();
+    // }).then(function (data) {
+    //   if (data.accept) {
+    //     tinyModal.openModal('#modal-submit');
+    //     form.reset();
+    //     form.btnSubmit.disabled = !_this.checkValidity();
+    //     Array.from(form.elements).forEach(function (input) {
+    //       input.classList.remove('valid');
+    //     });
+    //   } else {
+    //     serverErrText.innerHTML = 'Ошибка валидации на сервере. Проверьте введенные данные.';
+    //     console.error(data.error);
+    //   }
+    // }).catch(function (error) {
+    //   return console.error('my_err: ', error);
+    // });
   });
 });
 
@@ -373,7 +375,7 @@ __webpack_require__.r(__webpack_exports__);
 /************************************************************************/
 /******/ 	// The module cache
 /******/ 	var __webpack_module_cache__ = {};
-/******/ 	
+/******/
 /******/ 	// The require function
 /******/ 	function __webpack_require__(moduleId) {
 /******/ 		// Check if module is in cache
@@ -387,14 +389,14 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 			// no module.loaded needed
 /******/ 			exports: {}
 /******/ 		};
-/******/ 	
+/******/
 /******/ 		// Execute the module function
 /******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
-/******/ 	
+/******/
 /******/ 		// Return the exports of the module
 /******/ 		return module.exports;
 /******/ 	}
-/******/ 	
+/******/
 /************************************************************************/
 /******/ 	/* webpack/runtime/compat get default export */
 /******/ 	!function() {
@@ -407,7 +409,7 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 			return getter;
 /******/ 		};
 /******/ 	}();
-/******/ 	
+/******/
 /******/ 	/* webpack/runtime/define property getters */
 /******/ 	!function() {
 /******/ 		// define getter functions for harmony exports
@@ -419,12 +421,12 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 			}
 /******/ 		};
 /******/ 	}();
-/******/ 	
+/******/
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */
 /******/ 	!function() {
 /******/ 		__webpack_require__.o = function(obj, prop) { return Object.prototype.hasOwnProperty.call(obj, prop); }
 /******/ 	}();
-/******/ 	
+/******/
 /******/ 	/* webpack/runtime/make namespace object */
 /******/ 	!function() {
 /******/ 		// define __esModule on exports
@@ -435,7 +437,7 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 			Object.defineProperty(exports, '__esModule', { value: true });
 /******/ 		};
 /******/ 	}();
-/******/ 	
+/******/
 /************************************************************************/
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be in strict mode.
